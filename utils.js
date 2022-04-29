@@ -28,7 +28,11 @@ const focusOnMountedAndOnSlash = (selector, { onMounted = true } = {}) => {
   focusOnSlash(selector)
 }
 
-const disable = selector => (document.querySelector(selector).disabled ||= true)
+const disable = selector => {
+  let el = document.querySelector(selector)
+
+  el && (el.disabled ||= true)
+}
 
 const warn = msg => {
   document.title = msg
