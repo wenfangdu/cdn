@@ -28,6 +28,11 @@ const focusOnMountedAndOnSlash = (selector, { onMounted = true } = {}) => {
   focusOnSlash(selector)
 }
 
+const clickOnEnter = (...selectors) =>
+  addEventListener('keydown', ({ key }) => {
+    key === 'Enter' && selectors.forEach(selector => document.querySelector(selector)?.click())
+  })
+
 const disable = selector => {
   let el = document.querySelector(selector)
 
