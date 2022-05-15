@@ -31,9 +31,13 @@ const focusOnMountedAndOnSlash = (selector, { onMounted = true } = {}) => {
 const clickOnEnter = (...selectors) =>
   addEventListener('keydown', ({ key }) => {
     if (key === 'Enter') {
-      document.activeElement.blur()
+      const els = selectors.map(selector => document.querySelector(selector))
 
-      selectors.forEach(selector => document.querySelector(selector)?.click())
+      if (els.some(Boolean)) {
+        document.activeElement.blur()
+
+        els.forEach(el => el?.click())
+      }
     }
   })
 
