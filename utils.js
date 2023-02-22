@@ -45,6 +45,8 @@ const clickOnEnter = (...selectors) => clickOnKey('Enter', ...selectors)
 
 const clickOnEsc = (...selectors) => clickOnKey('Escape', ...selectors)
 
+const clickOnSlash = (...selectors) => clickOnKey('/', ...selectors)
+
 const disable = selector => {
   let el = document.querySelector(selector)
 
