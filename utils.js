@@ -1,16 +1,19 @@
-const remove = (...selectors) =>
-  selectors.forEach(selector => document.querySelectorAll(selector).forEach(el => el.remove()))
+const remove = (...selectors) => {
+  selectors.forEach(selector => {
+    document.querySelectorAll(selector).forEach(el => {
+      el.remove()
+    })
+  })
+}
 
 const _focus = input => {
-  if (input) {
-    input.disabled &&= false
-
-    input.focus()
-
-    const end = input.value.length
-
-    input.setSelectionRange(end, end)
+  if (!input) {
+    return
   }
+  input.disabled &&= false
+  input.focus()
+  const end = input.value.length
+  input.setSelectionRange(end, end)
 }
 
 const focusOnSlash = (...selectors) =>
