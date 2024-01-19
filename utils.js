@@ -6,6 +6,11 @@ const remove = (...selectors) => {
   })
 }
 
+const disable = selector => {
+  let el = document.querySelector(selector)
+  el && (el.disabled ||= true)
+}
+
 const _focus = input => {
   if (!input) {
     return
@@ -45,11 +50,6 @@ const clickOnEnter = (...selectors) => clickOnKey('Enter', ...selectors)
 const clickOnEsc = (...selectors) => clickOnKey('Escape', ...selectors)
 
 const clickOnSlash = (...selectors) => clickOnKey('/', ...selectors)
-
-const disable = selector => {
-  let el = document.querySelector(selector)
-  el && (el.disabled ||= true)
-}
 
 const warn = msg => {
   document.title = msg
