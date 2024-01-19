@@ -20,14 +20,12 @@ const focusOnSlash = (...selectors) =>
   addEventListener('keyup', ({ key }) => {
     if (key === '/' && !['input', 'textarea'].includes(document.activeElement.localName)) {
       const input = selectors.map(selector => document.querySelector(selector)).find(Boolean)
-
       _focus(input)
     }
   })
 
 const focusOnMountedAndOnSlash = (selector, { onMounted = true } = {}) => {
   onMounted && _focus(document.querySelector(selector))
-
   focusOnSlash(selector)
 }
 
@@ -35,10 +33,8 @@ const clickOnKey = (key, ...selectors) =>
   addEventListener('keydown', evt => {
     if (evt.key === key && !['input', 'textarea'].includes(document.activeElement.localName)) {
       const els = selectors.map(selector => document.querySelector(selector))
-
       if (els.some(Boolean)) {
         document.activeElement.blur()
-
         els.forEach(el => el?.click())
       }
     }
@@ -52,21 +48,16 @@ const clickOnSlash = (...selectors) => clickOnKey('/', ...selectors)
 
 const disable = selector => {
   let el = document.querySelector(selector)
-
   el && (el.disabled ||= true)
 }
 
 const warn = msg => {
   document.title = msg
-
   stop()
-
   document.body.remove()
-
   const observer = new MutationObserver(
     ([{ target }]) => target.text === msg || (target.text = msg),
   )
-
   observer.observe(document.querySelector('title'), { childList: true })
 }
 
