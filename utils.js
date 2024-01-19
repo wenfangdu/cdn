@@ -6,6 +6,14 @@ const remove = (...selectors) => {
   })
 }
 
+const blur = (...selectors) => {
+  selectors.forEach(selector => {
+    document.querySelectorAll(selector).forEach(el => {
+      el.blur()
+    })
+  })
+}
+
 const disable = selector => {
   let el = document.querySelector(selector)
   el && (el.disabled ||= true)
