@@ -4,15 +4,8 @@ const remove = (...selectors) => {
   })
 }
 
-const blur = (...selectors) => {
-  document.querySelectorAll(selectors).forEach(el => {
-      el.blur()
-  })
-}
-
-const disable = selector => {
-  let el = document.querySelector(selector)
-  el && (el.disabled ||= true)
+const blur = () => {
+  setTimeout(() => document.activeElement.blur(), 10)
 }
 
 const _focus = input => {
