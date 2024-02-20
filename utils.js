@@ -17,13 +17,14 @@ const focus = input => {
   input.focus()
 }
 
-const focusOnSlash = (...selectors) =>
+const focusOnSlash = (...selectors) => {
   addEventListener('keyup', ({ key }) => {
     if (key === '/' && !['input', 'textarea'].includes(document.activeElement.localName)) {
       const input = selectors.map(selector => document.querySelector(selector)).find(Boolean)
-      _focus(input)
+      focus(input)
     }
   })
+}
 
 const focusOnMountedAndOnSlash = (selector, { onMounted = true } = {}) => {
   onMounted && _focus(document.querySelector(selector))
