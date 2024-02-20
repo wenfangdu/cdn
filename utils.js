@@ -8,11 +8,10 @@ const blur = () => {
   setTimeout(() => document.activeElement.blur(), 10)
 }
 
-const _focus = input => {
+const focus = input => {
   if (!input) {
     return
   }
-  input.disabled &&= false
   input.focus()
   const end = input.value.length
   input.setSelectionRange(end, end)
