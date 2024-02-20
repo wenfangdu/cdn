@@ -12,9 +12,9 @@ const focus = input => {
   if (!input) {
     return
   }
-  input.focus()
   const end = input.value.length
   input.setSelectionRange(end, end)
+  input.focus()
 }
 
 const focusOnSlash = (...selectors) =>
