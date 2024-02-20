@@ -1,16 +1,12 @@
 const remove = (...selectors) => {
-  selectors.forEach(selector => {
-    document.querySelectorAll(selector).forEach(el => {
+  document.querySelectorAll(selectors).forEach(el => {
       el.remove()
-    })
   })
 }
 
 const blur = (...selectors) => {
-  selectors.forEach(selector => {
-    document.querySelectorAll(selector).forEach(el => {
+  document.querySelectorAll(selectors).forEach(el => {
       el.blur()
-    })
   })
 }
 
