@@ -8,13 +8,14 @@ const blur = () => {
   setTimeout(() => document.activeElement.blur(), 10)
 }
 
-const focus = input => {
-  if (!input) {
+const focus = selector => {
+  const el = document.querySelector(selector)
+  if (!el) {
     return
   }
-  const end = input.value.length
-  input.setSelectionRange(end, end)
-  input.focus()
+  const end = el.value.length
+  el.setSelectionRange(end, end)
+  el.focus()
 }
 
 const focusOnSlash = (...selectors) => {
