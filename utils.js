@@ -1,6 +1,6 @@
 const remove = (...selectors) => {
   document.querySelectorAll(selectors).forEach(el => {
-      el.remove()
+    el.remove()
   })
 }
 
@@ -27,12 +27,16 @@ const focusOnSlash = (...selectors) => {
   })
 }
 
+const click = selector => {
+  document.querySelector(selector)?.click()
+}
+
 const clickOnKey = (key, ...selectors) =>
   addEventListener('keyup', evt => {
     if (evt.key === key && !['input', 'textarea'].includes(document.activeElement.localName)) {
       const els = selectors.map(selector => document.querySelector(selector))
       if (els.some(Boolean)) {
-        document.activeElement.blur()
+        blur()
         els.forEach(el => el?.click())
       }
     }
