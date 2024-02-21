@@ -10,12 +10,11 @@ const blur = () => {
 
 const focus = selector => {
   const el = document.querySelector(selector)
-  if (!el) {
-    return
+  if (el) {
+    const end = el.value.length
+    el.setSelectionRange(end, end)
+    el.focus()
   }
-  const end = el.value.length
-  el.setSelectionRange(end, end)
-  el.focus()
 }
 
 const focusOnSlash = (...selectors) => {
