@@ -31,9 +31,10 @@ const click = (selector, target = document) => {
   target.querySelector(selector)?.click()
 }
 
-const clickOnEnter = selector => {
+const clickOnEnter = (...selectors) => {
   addEventListener('keyup', ({ key }) => {
     if (key === 'Enter' && !['input', 'textarea'].includes(document.activeElement.localName)) {
+      const selector = selectors.find(selector => document.querySelector(selector))
       click(selector)
     }
   })
