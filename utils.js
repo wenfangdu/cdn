@@ -27,8 +27,8 @@ const focusOnSlash = (...selectors) => {
   })
 }
 
-const click = selector => {
-  document.querySelector(selector)?.click()
+const click = (selector, target = document) => {
+  target.querySelector(selector)?.click()
 }
 
 const clickOnKey = (key, ...selectors) =>
