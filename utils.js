@@ -40,12 +40,10 @@ const clickOnEnter = selector => {
 }
 
 const warn = msg => {
-  document.title = msg
   stop()
+  document.title = msg
   document.body.remove()
-  const observer = new MutationObserver(
-    ([{ target }]) => target.text === msg || (target.text = msg),
-  )
+  const observer = new MutationObserver(([{ target }]) => (target.text = msg))
   observer.observe(document.querySelector('title'), { childList: true })
 }
 
