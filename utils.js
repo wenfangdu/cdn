@@ -27,11 +27,6 @@ const focusOnSlash = (...selectors) => {
   })
 }
 
-const focusOnMountedAndOnSlash = (selector, { onMounted = true } = {}) => {
-  onMounted && _focus(document.querySelector(selector))
-  focusOnSlash(selector)
-}
-
 const clickOnKey = (key, ...selectors) =>
   addEventListener('keyup', evt => {
     if (evt.key === key && !['input', 'textarea'].includes(document.activeElement.localName)) {
