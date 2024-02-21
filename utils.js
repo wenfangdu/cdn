@@ -39,6 +39,8 @@ const clickOnEnter = selector => {
   })
 }
 
+const pause = ms => new Promise(resolve => setTimeout(resolve, ms))
+
 const warn = msg => {
   stop()
   document.title = msg
@@ -46,5 +48,3 @@ const warn = msg => {
   const observer = new MutationObserver(([{ target }]) => (target.text = msg))
   observer.observe(document.querySelector('title'), { childList: true })
 }
-
-const pause = ms => new Promise(resolve => setTimeout(resolve, ms))
