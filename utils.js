@@ -11,10 +11,10 @@ const blur = () => {
 const focus = selector => {
   const el = document.querySelector(selector)
   if (el) {
-    const end = el.value.length
-    el.setSelectionRange(end, end)
     el.scrollIntoView({ block: 'center' })
     el.focus()
+    const end = el.value.length
+    el.setSelectionRange(end, end)
   }
 }
 
