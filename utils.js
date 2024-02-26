@@ -13,8 +13,7 @@ const focus = selector => {
   if (el) {
     el.scrollIntoView({ block: 'center' })
     el.focus()
-    const end = el.value.length
-    el.setSelectionRange(end, end)
+    el.setSelectionRange(el.value.length, el.value.length)
   }
 }
 
