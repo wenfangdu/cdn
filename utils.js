@@ -5,7 +5,8 @@ const remove = (...selectors) => {
 }
 
 const blur = () => {
-  setTimeout(() => document.activeElement.blur(), 10)
+  const interval = setInterval(() => document.activeElement.blur())
+  setTimeout(() => clearInterval(interval), 300)
 }
 
 const focus = selector => {
