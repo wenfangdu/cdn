@@ -46,6 +46,6 @@ const warn = msg => {
   stop()
   document.title = msg
   document.body.remove()
-  const observer = new MutationObserver(([{ target }]) => (target.text = msg))
+  const observer = new MutationObserver(([{ target }]) => (target.innerHTML = msg))
   observer.observe(document.querySelector('title'), { childList: true })
 }
