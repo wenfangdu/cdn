@@ -1,0 +1,84 @@
+/* ref: https://github.com/dracula/highlightjs v1.2.5 */
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body.vscode-body {
+  padding: 40px;
+  margin-bottom: 260px;
+
+  /* not inside vscode */
+  &:not(.scrollBeyondLastLine) {
+    font-family: serif;
+
+    h1,
+    h2 {
+      border: none;
+    }
+
+    blockquote {
+      background: #f8f8f8;
+      border-color: #e5e5e5;
+    }
+  }
+
+  pre {
+    background: #282a36;
+    border-radius: 6px;
+    white-space: pre-wrap;
+  }
+
+  .hljs-built_in,
+  .hljs-selector-tag,
+  .hljs-section,
+  .hljs-link {
+    color: #8be9fd;
+  }
+
+  .hljs-keyword {
+    color: #ff79c6;
+  }
+
+  pre,
+  .hljs-subst {
+    color: #f8f8f2;
+  }
+
+  .hljs-title,
+  .hljs-attr,
+  .hljs-meta-keyword {
+    color: #50fa7b;
+  }
+
+  .hljs-string,
+  .hljs-meta,
+  .hljs-name,
+  .hljs-type,
+  .hljs-symbol,
+  .hljs-bullet,
+  .hljs-addition,
+  .hljs-variable,
+  .hljs-template-tag,
+  .hljs-template-variable {
+    color: #f1fa8c;
+  }
+
+  .hljs-comment,
+  .hljs-quote,
+  .hljs-deletion {
+    color: #6272a4;
+    font-style: normal;
+  }
+
+  .hljs-literal,
+  .hljs-number {
+    color: #bd93f9;
+  }
+
+  .hljs-params {
+    color: #ffb86c;
+  }
+}
